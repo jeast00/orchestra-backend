@@ -8,10 +8,10 @@
 require 'faker'
 
 10.times do
-    Band.Create(band_name:Faker::Music.band)
+    Band.create(band_name:Faker::Music.band)
 end
 
 50.times do
-    Instrument.Create(instrument_name:Faker::Music.instrument,
+    Instrument.create(instrument_name:Faker::Music.instrument,
                       band_id:Band.all.sample.id)
 end
