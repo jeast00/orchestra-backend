@@ -28,14 +28,14 @@ class BandsController < ApplicationController
 
     end
 
-    def delete
+    def destroy
         band = Band.find(params[:id])
         band.destroy
     end
 
     private
 
-    def band_params() 
+    def band_params
         params.require(:band).permit(:band_name)
     end
 
