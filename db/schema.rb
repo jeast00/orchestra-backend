@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_01_13_154133) do
     t.integer "band_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["band_id"], name: "index_instruments_on_band_id"
   end
 
 end
