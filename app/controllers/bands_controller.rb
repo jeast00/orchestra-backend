@@ -12,6 +12,7 @@ class BandsController < ApplicationController
     end
 
     def create
+        # byebug
         band = Band.new(band_params)
 
         if band.save
