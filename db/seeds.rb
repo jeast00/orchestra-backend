@@ -7,11 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-10.times do
+Band.destroy_all
+Instrument.destroy_all
+
+1.times do
     Band.create(band_name:Faker::Music.band)
 end
 
-50.times do
+3.times do
     Instrument.create(instrument_name:Faker::Music.instrument,
                       band_id:Band.all.sample.id)
 end

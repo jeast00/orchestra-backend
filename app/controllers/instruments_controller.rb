@@ -1,12 +1,7 @@
 class InstrumentsController < ApplicationController
 
     def index 
-        if params[:band_id] && band = Band.find(params[:band_id])
-            instruments = band.instruments
-            render json: instruments
-        else
-            render json: Instrument.all
-        end
+        render json: Instrument.all
     end
 
     def create
