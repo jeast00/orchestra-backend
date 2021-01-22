@@ -10,11 +10,11 @@ require 'faker'
 Band.destroy_all
 Instrument.destroy_all
 
-1.times do
+5.times do
     Band.create(band_name:Faker::Music.band)
 end
 
-3.times do
+20.times do
     Instrument.create(instrument_name:Faker::Music.instrument,
                       band_id:Band.all.sample.id)
 end
