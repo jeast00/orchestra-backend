@@ -1,14 +1,14 @@
 class InstrumentsController < ApplicationController
 
     def index 
-        render json: Instrument.all
+        render json: Instrument.all.map { |instrument| InstrumentSerializer.new(instrument) }
     end
 
     def create
         instrument = Instrument.new(instrument_params)
 
         if instrument.save
-            render json: instrument
+            render json: InstrumentSerializer.new(instrument)
         end
 
     end

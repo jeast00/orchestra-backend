@@ -2,7 +2,7 @@ class BandsController < ApplicationController
 
     def index
         # byebug
-        render json: Band.all
+        render json: Band.all.map { |band| BandSerializer.new(band) }
     end
 
     def show
@@ -16,7 +16,7 @@ class BandsController < ApplicationController
         band = Band.new(band_params)
 
         if band.save
-            render json: band
+            render json: BandSerializer.new(band)
         end
     end
 

@@ -1,4 +1,4 @@
 class BandSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :band_name
+  attributes :band_name, :instruments
 end
